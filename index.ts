@@ -22,7 +22,7 @@ const run = async () => {
   await connectorDoc.save();
 
   const res = await ConnectorModel.find().populate(['serviceAccount', 'endpoints.$*.OAuth']);
-  console.log('what is res', res[0], res[0].endpoints.get('testA'), res[0].endpoints.get('testB'));
+  console.log('what is res', res[0], res[0].endpoints!.get('testA'), res[0].endpoints!.get('testB'));
 }
 
 run();
